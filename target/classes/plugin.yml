@@ -1,0 +1,5 @@
+name: Hulu
+version: 1.69-Snapshot
+main: net.hcriots.hcfactions.Hulu
+author: Vyrix Development Team
+depend: [ Oxygen, ProtocolLib ]

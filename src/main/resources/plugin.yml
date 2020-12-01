@@ -1,0 +1,5 @@
+name: ${project.artifactId}
+version: 1.69-Snapshot
+main: ${main}
+author: ${creators}
+depend: [ Oxygen, ProtocolLib ]

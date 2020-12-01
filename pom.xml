@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020.
+  ~ Created by YoloSanta
+  ~ Created On 10/22/20, 1:23 AM
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>VyrixRepo</artifactId>
+        <groupId>us.vyrix</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Hulu</artifactId>
+
+    <properties>
+        <main>net.hcriots.hcfactions.Hulu</main>
+        <creators>Vyrix Development Team</creators>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>changelog.txt</include>
+                    <include>config.yml</include>
+                    <include>plugin.yml</include>
+                    <include>reclaims.yml</include>
+                    <include>tournament.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.16.16</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>sk89q-repo</id>
+            <url>http://maven.sk89q.com/repo/</url>
+        </repository>
+        <repository>
+            <id>fawe-repo</id>
+            <url>http://ci.athion.net/job/FastAsyncWorldEdit/ws/mvn/</url>
+        </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>everything</id>
+            <url>http://repo.citizensnpcs.co/</url>
+        </repository>
+        <repository>
+            <id>lunarclient-public</id>
+            <url>https://maven.moonsworth.com/repository/lunarclient-public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <!-- Hylist Spigot API -->
+        <dependency>
+            <groupId>net.hylist</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/mSpigot-API.jar</systemPath>
+        </dependency>
+
+        <!-- Hylist Spigot -->
+        <dependency>
+            <groupId>net.hylist</groupId>
+            <artifactId>spigot-server</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/mSpigot-Server.jar</systemPath>
+        </dependency>
+
+        <!-- ProtocolLib -->
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.3.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ProtocolLib.jar</systemPath>
+        </dependency>
+
+        <!-- LunarClient API -->
+        <dependency>
+            <groupId>com.cheatbreaker.api</groupId>
+            <artifactId>clientapi</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ClientAPI.jar</systemPath>
+        </dependency>
+
+        <!-- Stark -->
+        <dependency>
+            <groupId>us.vyrix</groupId>
+            <artifactId>Bukkit</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- WorldEdit Core -->
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-core</artifactId>
+            <version>6.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- WorldEdit Bukkit -->
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <version>6.1.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- GSON -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>LATEST</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Fanciful -->
+        <dependency>
+            <groupId>mkremins</groupId>
+            <artifactId>fanciful</artifactId>
+            <version>0.4.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/fanciful-0.4.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+
+        <!-- Mongo Java Driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.10.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Stark Core -->
+        <dependency>
+            <groupId>us.vyrix</groupId>
+            <artifactId>Core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JEDIS -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.1.0-m1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- HolographicDisplays API -->
+        <dependency>
+            <groupId>com.gmail.filoghost.holographicdisplays</groupId>
+            <artifactId>holographicdisplays-api</artifactId>
+            <version>2.2.7-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Citizens API -->
+        <dependency>
+            <groupId>net.citizensnpcs</groupId>
+            <artifactId>citizens</artifactId>
+            <version>2.0.20-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+</project>

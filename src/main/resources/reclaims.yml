@@ -1,0 +1,124 @@
+groups:
+  victor:
+    commands:
+      - bc -r &6&lVyrix &7- &e%player% &7&ohas reclaimed their &eVictor &7&operks.
+      - cr givekey %player% Lord 4
+      - cr givekey %player% Titan 8
+      - cr givekey %player% Champion 3
+      - cr givekey %player% Halloween 2
+      - partnerpackage %player% 2
+      - monthlycrate give %player% Pandora 2
+      - airdrops give %player% 2
+      - addlives %player% Friend 8
+  guardian:
+    commands:
+      - bc -r &6&lVyrix &7- &3%player% &7&ohas reclaimed their &3Guardian &7&operks.
+      - cr givekey %player% Lord 6
+      - cr givekey %player% Titan 10
+      - cr givekey %player% Champion 3
+      - cr givekey %player% Halloween 2
+      - partnerpackage %player% 3
+      - monthlycrate give %player% Pandora 2
+      - airdrops give %player% 3
+      - addlives %player% Friend 16
+  hero:
+    commands:
+      - bc -r &6&lVyrix &7- &b%player% &7&ohas reclaimed their &bHero &7&operks.
+      - cr givekey %player% Lord 10
+      - cr givekey %player% Titan 20
+      - cr givekey %player% Champion 5
+      - cr givekey %player% Halloween 3
+      - partnerpackage %player% 5
+      - monthlycrate give %player% Pandora 2
+      - airdrops give %player% 3
+      - addlives %player% Friend 32
+  superior:
+    commands:
+      - bc -r &6&lVyrix &7- &6%player% &7&ohas reclaimed their &e&k!&6Superior&e&k! &7&operks.
+      - cr givekey %player% Lord 20
+      - cr givekey %player% Titan 30
+      - cr givekey %player% Champion 6
+      - cr givekey %player% Halloween 4
+      - partnerpackage %player% 6
+      - monthlycrate give %player% Pandora 2
+      - airdrops give %player% 3
+      - addlives %player% Friend 64
+  legend:
+    commands:
+      - bc -r &6&lVyrix &7- &5%player% &7&ohas reclaimed their &d&k!&5Legend&d&k! &7&operks.
+      - cr givekey %player% Lord 30
+      - cr givekey %player% Titan 40
+      - cr givekey %player% Champion 12
+      - cr givekey %player% Halloween 5
+      - partnerpackage %player% 8
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 5
+      - addlives %player% Friend 128
+  champion:
+    commands:
+      - bc -r &6&lVyrix &7- &6&l%player% &7&ohas reclaimed their &f&k! &6&lChampion &f&k! &7&operks.
+      - cr givekey %player% Lord 40
+      - cr givekey %player% Titan 50
+      - cr givekey %player% Champion 15
+      - cr givekey %player% Halloween 6
+      - partnerpackage %player% 10
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 5
+      - addlives %player% Friend 256
+  master:
+    commands:
+      - bc -r &6&lVyrix &7- &4&l%player% &7&ohas reclaimed their &f&k! &4&lMaster &f&k! &7&operks.
+      - cr givekey %player% Lord 50
+      - cr givekey %player% Titan 64
+      - cr givekey %player% Champion 20
+      - cr givekey %player% Halloween 10
+      - partnerpackage %player% 16
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 6
+      - addlives %player% Friend 300
+  youtube:
+    commands:
+      - bc -r &6&lVyrix &7- &d%player% &7&ohas reclaimed their &dYouTuber &7&operks.
+      - cr givekey %player% Lord 30
+      - cr givekey %player% Titan 40
+      - cr givekey %player% Champion 12
+      - cr givekey %player% Halloween 5
+      - partnerpackage %player% 8
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 5
+      - addlives %player% Friend 128
+  famous:
+    commands:
+      - bc -r &6&lVyrix &7- &a&o%player% &7&ohas reclaimed their &a&oFamous &7&operks.
+      - cr givekey %player% Lord 40
+      - cr givekey %player% Titan 50
+      - cr givekey %player% Champion 15
+      - cr givekey %player% Halloween 6
+      - partnerpackage %player% 10
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 5
+      - addlives %player% Friend 256
+  partner:
+    commands:
+      - bc -r &6&lVyrix &7- &b&o%player% &7&ohas reclaimed their &b&oPartner &7&operks.
+      - cr givekey %player% Lord 50
+      - cr givekey %player% Titan 64
+      - cr givekey %player% Champion 20
+      - cr givekey %player% Halloween 10
+      - partnerpackage %player% 16
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 6
+      - addlives %player% Friend 300
+  owner:
+    commands:
+      - bc -r &6&lVyrix &7- &4%player% &7&ohas reclaimed their &4&oOwner &7&operks.
+      - cr givekey %player% Lord 50
+      - cr givekey %player% Titan 64
+      - cr givekey %player% Champion 20
+      - cr givekey %player% Halloween 10
+      - partnerpackage %player% 16
+      - monthlycrate give %player% Pandora 3
+      - airdrops give %player% 6
+      - addlives %player% Friend 300
+reclaimed:
+  uuid: true

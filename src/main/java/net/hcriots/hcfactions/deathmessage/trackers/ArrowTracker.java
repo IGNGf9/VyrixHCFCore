@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2020.
+ * Created by YoloSanta
+ * Created On 10/22/20, 1:23 AM
+ */
+
+package net.hcriots.hcfactions.deathmessage.trackers;
+
+import cc.fyre.stark.util.EntityUtils;
+import lombok.Getter;
+import net.hcriots.hcfactions.Hulu;
+import net.hcriots.hcfactions.deathmessage.event.CustomPlayerDamageEvent;
+import net.hcriots.hcfactions.deathmessage.objects.Damage;
+import net.hcriots.hcfactions.deathmessage.objects.MobDamage;
+import net.hcriots.hcfactions.deathmessage.objects.PlayerDamage;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.metadata.MetadataValue;
+
+public class ArrowTracker implements Listener {
+
+    @EventHandler
+    public void onEntityShootBow(EntityShootBowEvent event) {
+        if (event.getEntity() instanceof Player) {
+            event.getProjectile().setMetadata("ShotFromDistance", new FixedMetadataValue(Hulu.getInstance(), event.getProjectile().getLocation()));
+        }
+    }
+
+    @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
+    public void onCustomPlayerDamage(CustomPlayerDamageEvent event) {
+        if (event.getCause() instanceof EntityDamageByEntityEvent) {
+            EntityDamageByEntityEvent entityDamageByEntityEvent = (EntityDamageByEntityEvent) event.getCause();
+
+            if (entityDamageByEntityEvent.getDamager() instanceof Arrow) {
+                Arrow arrow = (Arrow) entityDamageByEntityEvent.getDamager();
+
+                if (arrow.getShooter() instanceof Player) {
+                    /*LOGIC TEST
+                    Location l = arrow.getLocation();
+                    Location l2 = event.getPlayer().getLocation();
+                    if( l.getBlockX() != l2.getBlockX() || l.getBlockZ() != l2.getBlockZ() ) {
+                        entityDamageByEntityEvent.setCancelled(true);
+                        System.out.println("Cancelled arrow hit! Hit through a wall!");
+                        return;
+                    }
+                    LOGIC TEST - FAILED WILL TODO: INVESTIGATE FURTHER */
+                    Player shooter = (Player) arrow.getShooter();
+
+                    for (MetadataValue value : arrow.getMetadata("ShotFromDistance")) {
+                        Location shotFrom = (Location) value.value();
+                        double distance = shotFrom.distance(event.getPlayer().getLocation());
+                        event.setTrackerDamage(new ArrowDamageByPlayer(event.getPlayer().getName(), event.getDamage(), shooter.getName(), shotFrom, distance));
+                    }
+                } else if (arrow.getShooter() instanceof Entity) {
+                    event.setTrackerDamage(new ArrowDamageByMob(event.getPlayer().getName(), event.getDamage(), (Entity) arrow.getShooter()));
+                } else {
+                    event.setTrackerDamage(new ArrowDamage(event.getPlayer().getName(), event.getDamage()));
+                }
+            }
+        }
+    }
+
+    public static class ArrowDamage extends Damage {
+
+        public ArrowDamage(String damaged, double damage) {
+            super(damaged, damage);
+        }
+
+        public String getDeathMessage() {
+            return (wrapName(getDamaged()) + " was shot.");
+        }
+
+    }
+
+    public static class ArrowDamageByPlayer extends PlayerDamage {
+
+        @Getter
+        private final Location shotFrom;
+        @Getter
+        private final double distance;
+
+        public ArrowDamageByPlayer(String damaged, double damage, String damager, Location shotFrom, double distance) {
+            super(damaged, damage, damager);
+            this.shotFrom = shotFrom;
+            this.distance = distance;
+        }
+
+        public String getDeathMessage() {
+            return (wrapName(getDamaged()) + " was shot by " + wrapName(getDamager()) + " from " + ChatColor.BLUE + (int) distance + " blocks" + ChatColor.YELLOW + ".");
+        }
+
+    }
+
+    public static class ArrowDamageByMob extends MobDamage {
+
+        public ArrowDamageByMob(String damaged, double damage, Entity damager) {
+            super(damaged, damage, damager.getType());
+        }
+
+        public String getDeathMessage() {
+            return (wrapName(getDamaged()) + " was shot by a " + ChatColor.RED + EntityUtils.getName(getMobType()) + ChatColor.YELLOW + ".");
+        }
+
+    }
+
+}

@@ -1,0 +1,104 @@
+Mongo:
+  Host: '172.18.0.1'
+  DBName: 'HCF'
+serverName: Champions
+networkWebsite: vyrix.us
+scoreboard:
+  title: '&6&lVyrix &7| &fChampions'
+tab:
+  serverName: '&6&lChampions'
+  sectionColor: '&6'
+  infoColor: '&f'
+end-exit:
+  y: 69
+  z: 250
+blackMarket:
+  enabled: true
+  location: '250,99,250'
+joinBook:
+  title: ' '
+  lines:
+    - ''
+    - ''
+  author: ' '
+
+coordsStatus:
+  end: true
+  spawn: true
+
+scoreCoords:
+  shop: '7, 67'
+  crates: '12, 12'
+  endexit: '10, 18'
+
+glowstoneMountain: true
+cavern: false
+startingTimer: true
+forceInvites: false
+squads: false
+idleCheck: true
+uhcHealing: false
+passiveTag: true
+allowBoosting: false
+waterPlacementInClaims: false
+blockRemoval: false
+rodPrevention: false
+skybridgePrevention: false
+reduceArmorDamage: true
+blockEntitiesThroughPortals: true
+archerTagColor: YELLOW
+defaultRelationColor: RED
+minerWorld:
+  regen:
+    COAL_ORE: 30
+    IRON_ORE: 60
+    GOLD_ORE: 90
+    DIAMOND_ORE: 120
+potions:
+  REGEN:
+    splash: false
+    drinkables: false
+  SPEED:
+    splash: true
+    drinkables: true
+  FIRE_RESISTANCE:
+    splash: true
+    drinkables: true
+  POISON:
+    splash: true
+    drinkables: false
+  INSTANT_HEAL:
+    splash: true
+    drinkables: true
+  NIGHT_VISION:
+    splash: true
+    drinkables: true
+  WEAKNESS:
+    splash: false
+    drinkables: false
+  STRENGTH:
+    splash: false
+    drinkables: false
+  SLOWNESS:
+    splash: true
+    drinkables: false
+  INSTANT_DAMAGE:
+    splash: false
+    drinkables: false
+  WATER_BREATHING:
+    splash: true
+    drinkables: true
+  INVISIBILITY:
+    splash: false
+    drinkables: false
+
+TIPS:
+  DELAY: 45
+  MESSAGES:
+    - '&7[&6TIP&7] &fEarn &echarms &fby completing &e/challenges&f!'
+    - '&7[&6TIP&7] &fUpgrade your faction by doing &e/f upgrades&f!'
+    - '&7[&6TIP&7] &fStore precious faction loot in your faction vault, &e/f vault&f!'
+    - '&7[&6TIP&7] &fGrind and redeem your charms by doing &e/charms shop&f!'
+    - '&7[&6TIP&7] &fBuy &eboss eggs &fand place them in the &cWarzone &fto earn &6&lFACTION POINTS&f!'
+    - '&7[&6TIP&7] &fView the &ekoth schedule &fby typing &e/koth schedule&f!'
+    - '&7[&6TIP&7] &fRally your entire faction together by typing &e/f rally&f!'
